@@ -7,13 +7,20 @@
     <link rel="stylesheet" href="projekt.css">
 </head>
 <body>
+<div class="button-dice">
+    <p id="new_game">New game</p>
+    <div><img src="../bilder/dice-1.256x256.png" alt="" id="result"></div>
+    <div id="dice_image"></div>
+    <p id="roll">Roll</p>
+    <p id="keep">Keep</p>
+</div>
 <div class="cont">
     <div id="player1">
         <p id="name1">Player 1</p>
         <p id="point1">0</p>
         <div class="current1">
             <p>current</p>
-            <p>0</p>
+            <p id="current11">0</p>
 
         </div>
 
@@ -23,11 +30,12 @@
         <p id="point2">0</p>
         <div class="current2">
             <p>current</p>
-            <p>0</p>
+            <p id="current2">0</p>
 
         </div>
 
     </div>
 </div>
+<script src="projekt.js"></script>
 </body>
 </html>
