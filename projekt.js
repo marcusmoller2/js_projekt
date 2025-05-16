@@ -3,9 +3,12 @@ points1 = 0
 points2 = 0
 current1 = 0
 current2 = 0
+// Poängen för spelare 1 och 2
+// Tillfälliga poäng (rundan) för spelare 1 och 2
 
 document.querySelector("p#roll").addEventListener("click",function(){
     roll_dice()
+    // Visa rätt tillfälliga poäng beroende på vilken spelare som spelar
     if(current_player == "player1"){
         document.getElementById("current1").innerHTML = current1
     }
@@ -13,10 +16,13 @@ document.querySelector("p#roll").addEventListener("click",function(){
         document.getElementById("current2").innerHTML = current2
     }
 })
+// När man klickar på "keep"-knappen i (p taggen med id #keep)
 document.querySelector("p#keep").addEventListener("click",function(){
     if(current_player == "player1"){
+        // Lägg till current1 till totalpoängen för player1
         points1 = points1 + current1
         document.getElementById("point1").innerHTML = points1
+        // Nollställ tillfälliga poängen
         current1 = 0
         document.getElementById("current1").innerHTML = current1
         if(points1>=50){
