@@ -6,16 +6,26 @@ current2 = 0
 
 document.querySelector("p#roll").addEventListener("click",function(){
     roll_dice()
-    document.getElementById("current11").innerHTML = current1
+    if(current_player == "player1"){
+        document.getElementById("current1").innerHTML = current1
+    }
+    else if(current_player == "player2"){
+        document.getElementById("current2").innerHTML = current2
+    }
 })
 document.querySelector("p#keep").addEventListener("click",function(){
     if(current_player == "player1"){
         points1 = points1 + current1
         document.getElementById("point1").innerHTML = points1
         current1 = 0
-        document.getElementById("current11").innerHTML = current1
+        document.getElementById("current1").innerHTML = current1
         if(points1>=50){
             document.getElementById("player1").style.backgroundColor = "green";
+        }
+        else if(points1<50){
+            current_player = "player2"
+            document.getElementById("player1").style.backgroundColor = "rgb(239, 63, 116)"
+            document.getElementById("player2").style.backgroundColor = "rgb(255, 120, 150)"
         }
 
     }
@@ -26,6 +36,11 @@ document.querySelector("p#keep").addEventListener("click",function(){
         document.getElementById("current2").innerHTML = current2
         if(points2>=50){
             document.getElementById("player2").style.backgroundColor = "green";
+        }
+        else if(points2<50){
+            current_player = "player1"
+            document.getElementById("player1").style.backgroundColor = "rgb(255, 120, 150)"
+            document.getElementById("player2").style.backgroundColor = "rgb(239, 63, 116)"
         }
 
     }
